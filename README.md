@@ -2,6 +2,14 @@
 
 Android thermal viewer for older controller tablets, built for live drone video instead of simulation.
 
+## Quick Try
+
+- Prebuilt APK: `releases/HeatMapV1Android-v2.1.apk`
+- Target hardware: older Android 5.1/6.0 controller tablets
+- Current public release: `v2.1`
+
+If you only want to test the app, install the APK from the `releases/` folder.
+
 ## What It Does
 
 - Runs on older Android controller hardware with `minSdk 22`.
@@ -56,6 +64,26 @@ Contributions are especially useful in these areas:
 - Android Studio with Android SDK 34
 - JDK 17
 
+### Standard Public Build
+
+This repository now defaults to the normal public Android repositories:
+
+- Google Maven
+- Maven Central
+- Gradle Plugin Portal
+
+Use either of these commands:
+
+```bat
+gradlew.bat assembleRelease
+```
+
+or
+
+```bat
+gradlew.bat assembleDebug
+```
+
 ### Local Build
 
 ```bat
@@ -68,11 +96,28 @@ or
 build_release.bat
 ```
 
+`build_release.bat` is mainly for the original locked-down environment where Gradle traffic had to go through `mirror_proxy.ps1`.
+
+### Public Build Notes
+
+- `gradle-wrapper.jar` is committed so the wrapper works out of the box.
+- Local signing files are not included; if no release keystore is configured the app can still be built locally with debug signing.
+- The repo includes helper scripts for downloading Android SDK pieces on Windows if needed.
+- The repo does not require any proprietary vendor SDK to compile.
+
 ## Configuration Notes
 
 - The default stream URL is configured in-app and can be changed in Settings.
 - Local signing material is intentionally not included in this repository.
-- Proprietary vendor SDK drop-ins, if used, should stay local and should not be committed.
+- Optional local vendor SDK drop-ins, if used later, should stay local and should not be committed.
+- In the original restricted environment, set `HEATMAP_USE_MIRROR=1` and run `mirror_proxy.ps1` before Gradle commands.
+
+## Repository Contents
+
+- `releases/HeatMapV1Android-v2.1.apk` — installable build for testers
+- `gradlew.bat` and `gradle/wrapper/gradle-wrapper.jar` — wrapper files for standard builds
+- `download_sdk.ps1` and related scripts — Windows helpers for SDK/bootstrap setup
+- Full Kotlin source, resources, tests, and build scripts
 
 ## For Contributors
 
@@ -99,5 +144,5 @@ If you open an issue or PR, include:
 Current release line: `v2.1`
 
 - Parse-error fix for older controller tablets: done
-- Public-repo cleanup docs: done
+- Public-repo packaging for testers and builders: in repo
 - More OpenCV tooling: still open

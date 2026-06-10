@@ -1,0 +1,36 @@
+# Android / Gradle
+.gradle/
+.idea/
+local.properties
+*.iml
+**/build/
+.cxx/
+.externalNativeBuild/
+captures/
+
+# Signing / secrets
+keystore.properties
+*.jks
+*.keystore
+*.p12
+
+# Release artifacts
+*.apk
+*.aab
+!releases/*.apk
+!releases/*.sha256.txt
+
+# Maintainer-local logs and verification output
+build_diag.log
+build_log.txt
+apksig.txt
+verify_out.txt
+verify_and_copy.ps1
+
+# Optional local vendor SDK drop-ins
+app/libs/*.aar
+app/libs/*.jar
+
+# OS files
+Thumbs.db
+.DS_Store
