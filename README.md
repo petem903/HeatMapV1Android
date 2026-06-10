@@ -1,5 +1,5 @@
 # HeatMapV1Android by Pete
-<img width="1254" height="1254" alt="Image" src="https://github.com/user-attachments/assets/7edf97da-586f-4732-a2b0-c0cd783ac558" />
+<img width="1254" height="1254" alt="Image (1)" src="https://github.com/user-attachments/assets/578053b2-356d-4098-9e4d-edd5bf1baaeb" />
 
 
 Android thermal viewer for older controller tablets, built for live drone video instead of simulation.
