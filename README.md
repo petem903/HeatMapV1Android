@@ -8,6 +8,8 @@ Android thermal viewer for older controller tablets, built for live drone video 
 - Target hardware: older Android 5.1/6.0 controller tablets
 - Current public release: `v2.1`
 
+The APK is stored with Git LFS because it is larger than GitHub's normal web file limit.
+
 If you only want to test the app, install the APK from the `releases/` folder.
 
 ## What It Does
@@ -63,6 +65,7 @@ Contributions are especially useful in these areas:
 
 - Android Studio with Android SDK 34
 - JDK 17
+- Git LFS if you want the checked-in APK file from `releases/`
 
 ### Standard Public Build
 
@@ -82,6 +85,13 @@ or
 
 ```bat
 gradlew.bat assembleDebug
+```
+
+If you cloned without Git LFS, run:
+
+```bat
+git lfs install
+git lfs pull
 ```
 
 ### Local Build
@@ -114,7 +124,7 @@ build_release.bat
 
 ## Repository Contents
 
-- `releases/HeatMapV1Android-v2.1.apk` — installable build for testers
+- `releases/HeatMapV1Android-v2.1.apk` — installable build for testers, stored with Git LFS
 - `gradlew.bat` and `gradle/wrapper/gradle-wrapper.jar` — wrapper files for standard builds
 - `download_sdk.ps1` and related scripts — Windows helpers for SDK/bootstrap setup
 - Full Kotlin source, resources, tests, and build scripts
